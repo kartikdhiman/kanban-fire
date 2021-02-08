@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "kanban-fire"
+  "defaultProject": "kanban-fire",
+  "cli": {
+    "analytics": false
+  }
 }
