@@ -52,7 +52,7 @@ export class AppComponent {
     dialogRef
       .afterClosed()
       .subscribe((result: TaskDialogResult) => {
-        if (!result) {
+        if (!result.task.title || !result.task.description) {
           return;
         }
         this.todo.push(result.task);
