@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "commit": "cz"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +40,7 @@
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
     "codelyzer": "^6.0.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -53,5 +55,10 @@
     "protractor": "^7.0.0",
     "ts-node": "^9.1.1",
     "typescript": "~4.1.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
