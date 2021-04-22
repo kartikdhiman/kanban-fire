@@ -25,7 +25,26 @@ export class AppComponent {
 
   constructor(private dialog: MatDialog) {}
 
-  editTask(list: string, task: Task): void {}
+  editTask(list: string, task: Task): void {
+    const dialogRef = this.dialog.open(TaskDialogComponent, {
+      width: '270px',
+      data: {
+        task,
+        enableDelete: true,
+      },
+    });
+    dialogRef
+      .afterClosed()
+      .subscribe((result: TaskDialogResult) => {
+      const dataList = this[list];
+      const taskIndex = dataList.indexOf(task);
+      if (result.delete) {
+        dataList.splice(taskIndex, 1);
+      } else {
+        dataList[taskIndex] = task;
+      }
+    });
+  }
 
   drop(event: CdkDragDrop<Task[]|null>): void {
     if (event.previousContainer === event.container) {
